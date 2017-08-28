@@ -1,14 +1,15 @@
 package com.springcourse;
 
 import com.springcourse.Logger.Logger;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Event {
+    private Logger logger;
 
     public void doEvent() {
-        BeanFactory beanFactory = new ClassPathXmlApplicationContext("spring.xml");
-        Logger logger = (Logger)beanFactory.getBean("logger");
-        logger.log("Class Event do same event.");
+      logger.log("Class Event do same event.");
+    }
+
+    public void setLogger(Logger logger) {
+        this.logger = logger;
     }
 }

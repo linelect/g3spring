@@ -5,7 +5,10 @@
  		http://www.springframework.org/schema/beans
  		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <bean id="event" class="com.springcourse.Event" />
     <bean id="logger" class="com.springcourse.Logger.LoggerImpl" />
+    <bean id="event" class="com.springcourse.Event">
+        <property name="logger" ref="logger"/>
+    </bean>
+
 
 </beans>
