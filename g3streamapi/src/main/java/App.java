@@ -28,6 +28,15 @@ public class App {
         students.stream()
                 .filter(student -> student.getGroup().getId() == 1 & student.getAvgRating() > 50)
                 .forEach(System.out::println);
+
+        System.out.println("-----------------------------------");
+
+//        3) Создать объект професий и если средний бал студента выше 80 то переобразовать его в провесионала (Професия)
+        students.stream()
+                .filter(student -> student.getAvgRating() > 80)
+                .map(Profession::new)
+                .forEach(System.out::println);
+
     }
 
 }
